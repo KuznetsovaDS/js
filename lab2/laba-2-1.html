@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src = "apple.jpg" id="appleJpg"
+    onclick="changeSize();">
+    <script>
+        var isScale = false;
+        function changeSize(){
+            var img = document.getElementById('appleJpg');
+            if(isScale){
+                img.style.transform = "scale(1)";
+            }
+            else{
+                img.style.transform = "scale(2)";
+            }
+            isScale = !isScale;
+        }
+    </script>
+</body>
+</html>

@@ -7,9 +7,15 @@
 <script>
         (function() {
             'use strict';
-            window.newWindow = function() {
-                var newWindow = "width=300,height=400,resizable=yes";
-                window.open('', 'Пустое окно', newWindow);
+            function openWindow(){
+                window.open('','','width=300,height=400,resizable=yes');
+            }
+            window.onload = function() {
+                var link = document.getElementById('newWindow');
+                link.addEventListener('click', function() {
+                   
+                    openWindow();
+                });
             };
         })();
     </script>

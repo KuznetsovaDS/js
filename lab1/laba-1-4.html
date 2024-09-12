@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        (function() {
-            'use strict';
-            function NewClass(title, url) {
-                this.title = title; 
-                this.url = url;  
-                this.show = function() {
-                    document.write("Название: " + this.title + "<br>");
-                    document.write("URL: " + this.url + "<br>");
-                };
-                }
-            function showInfo(){
-                var newObj = new NewClass("пример", "http://new.com")
-                newObj.show();
-            }
-            window.onload = showInfo;
-        })();
-    </script>
 </head>
-<body>    
-</body>
+    <body>  
+        <script>
+            (function() {
+                'use strict';
+                function NewClass(title, url) {
+                    this.title = title; 
+                    this.url = url;  
+                    this.show = function() {
+                        document.write("Название: " + this.title + "<br>");
+                        document.write("URL: " + this.url + "<br>");
+                    };
+                    }
+                function showInfo(){
+                    var newObj = new NewClass("пример", "http://new.com")
+                    newObj.show();
+                }
+                window.onload = showInfo;
+            })();
+        </script>
+    </body>
 </html>

@@ -9,17 +9,20 @@
     <img src = "apple.jpg" id="appleJpg"
     onclick="changeSize();">
     <script>
-        var isScale = false;
-        function changeSize(){
-            var img = document.getElementById('appleJpg');
-            if(isScale){
-                img.style.transform = "scale(1)";
-            }
-            else{
-                img.style.transform = "scale(2)";
-            }
-            isScale = !isScale;
-        }
+         (function(){
+            'use strict';
+            var isScale = false;
+            function changeSize(){
+                var img = document.getElementById('appleJpg');
+                if(isScale){
+                    img.style.transform = "scale(1)";
+                }
+                else{
+                    img.style.transform = "scale(2)";
+                }
+                isScale = !isScale;
+            };
+        })();
     </script>
 </body>
 </html>

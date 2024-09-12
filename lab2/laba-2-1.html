@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <img src = "apple.jpg" id="appleJpg"
-    onclick="changeSize();">
-    <script>
-         (function(){
+        <script>
+          window.onload = function () {
             'use strict';
             var isScale = false;
-            function changeSize(){
+            function changeSize() {
                 var img = document.getElementById('appleJpg');
-                if(isScale){
-                    img.style.transform = "scale(1)";
+                if (isScale) {
+                    img.style.transform = "scale(1)"; 
+                } else {
+                    img.style.transform = "scale(2)"; 
                 }
-                else{
-                    img.style.transform = "scale(2)";
-                }
-                isScale = !isScale;
-            };
-        })();
-    </script>
+                isScale = !isScale; 
+            }
+            var img = document.getElementById('appleJpg');
+            img.addEventListener('click', changeSize);
+        };
+     </script>
+ </head>
+ <body>
+        <img src = "apple.jpg" id="appleJpg" onclick="changeSize();">
 </body>
 </html>

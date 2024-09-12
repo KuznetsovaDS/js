@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (function() {
+            'use strict';
+        function getDay(i){
+            if (i % 10 == 1 && i % 100 != 11){
+                return "день";
+            }
+            else if ((i % 10 >=2 && i % 10 <=4) && (i %100 < 10 || i %100>=20)){
+                return "дня";
+            }
+            else{
+                return "дней";
+            }
+        }
+        function showDays(i){
+            var day = getDay(i);
+            document.write("До конца вашей учебы остается " + i + " " + day);
+
+        }
+        showDays(13); 
+            document.write("<br>");
+            showDays(2); 
+            document.write("<br>");
+            showDays(21);  
+    })();
+    </script>
+</head>
+<body>
+</body>
+</html>

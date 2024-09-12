@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<script>
+        (function() {
+            'use strict';
+            window.newWindow = function() {
+                var newWindow = "width=300,height=400,resizable=yes";
+                window.open('', 'Пустое окно', newWindow);
+            };
+        })();
+    </script>
 </head>
 <body>
     <a href="#" onclick="newWindow();">Новое окно </a>
-    <script>
-        (function(){
-            'use strict';
-            function newWindow(){
-                window.open('', 'Пустое окно','width=300, height=400, resizable=yes');
-            }
-      })();
-    </script>
-    
 </body>
 </html>

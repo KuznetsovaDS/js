@@ -8,10 +8,12 @@
 <body>
     <a href="#" onclick="newWindow();">Новое окно </a>
     <script>
-        function newWindow(){
-           
-            window.open('', 'Пустое окно','width=300, height=400, resizable=yes, menubar=yes, toolbar=yes, location=yes, status=yes');
-        }
+        (function(){
+            'use strict';
+            function newWindow(){
+                window.open('', 'Пустое окно','width=300, height=400, resizable=yes');
+            }
+      })();
     </script>
     
 </body>

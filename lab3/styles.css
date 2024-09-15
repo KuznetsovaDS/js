@@ -1,0 +1,24 @@
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 20px;
+}
+h2 {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.menu {
+    
+    padding: 0;
+    width: 500px;
+    list-style: none;
+    border: 1px solid #640000;
+    background-color: #f8ea9a;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px  #640000;
+}
+
+.menu li {
+    padding: 8px 10px;
+    color: #2e0000;
+}

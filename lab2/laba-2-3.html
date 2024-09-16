@@ -8,12 +8,13 @@
         (function() {
             'use strict';
             function openWindow(){
-                window.open('','','width=300,height=400,resizable=yes');
+                var params = "scrollbars=no,resizable=yes,status=yes,location=yes,toolbar=yes,menubar=yes,width=300,height=400,left=-1000,top=-1000";
+                window.open('', '', params);
             }
             window.onload = function() {
                 var link = document.getElementById('newWindow');
-                link.addEventListener('click', function() {
-                   
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
                     openWindow();
                 });
             };

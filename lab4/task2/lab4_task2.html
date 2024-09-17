@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .svg-container {
+            margin-bottom: 10px;
+            border: 1px solid #5e5e5e;
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="svg-container">
+        <h2>&lt;embed&gt;</h2>
+        <embed src="exampleEmbed.svg" type="image/svg+xml" width="120" height="120" onerror="this.outerHTML = '<p>SVG не загрузился</p>';">
+    </div>
+    <div class="svg-container">
+        <h2>&lt;object&gt;</h2>
+        <object data="exampleObject.svg" type="image/svg+xml" width="120" height="120">
+            <img src="image.png" alt="Картинка недоступна">
+            <p>Браузер не поддерживает SVG.</p>
+        </object>
+    </div>
+    <div class="svg-container">
+        <h2>&lt;svg&gt;</h2>
+        <svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="50"  fill="yellow" />
+        </svg>
+    </div>
+    <script>
+        function supportsSVG() {
+            return typeof document.createElementNS === 'function';
+        }
+        if (!supportsSVG()) {
+            alert("SVG не поддерживается");
+        }
+    </script>
+    
+</body>
+</html>

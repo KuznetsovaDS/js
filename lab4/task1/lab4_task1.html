@@ -8,6 +8,8 @@
 <body>
     <canvas id="lab4" width="300" height="300"></canvas>
     <script>
+        (function () {
+            "use strict";
         var canvas = document.getElementById('lab4');
         if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
@@ -24,6 +26,7 @@
         } else {
             console.log("Canvas не поддерживается");
         }
+    })();
    </script>
 </body>
 </html>

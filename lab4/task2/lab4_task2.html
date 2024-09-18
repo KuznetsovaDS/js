@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SVG Проверка</title>
     <style>
         .svg-container {
             margin-bottom: 10px;
@@ -11,33 +11,36 @@
             padding: 7px;
         }
     </style>
+    <script src="modernizr.js"></script>
 </head>
 <body>
     <div class="svg-container">
-        <h2>&lt;embed&gt;</h2>
-        <embed src="exampleEmbed.svg" type="image/svg+xml" width="120" height="120" onerror="this.outerHTML = '<p>SVG не загрузился</p>';">
+        <h2>embed</h2>
+        <embed src="exampleEmbed.svg" type="image/svg+xml" width="120" height="120">
     </div>
+
     <div class="svg-container">
-        <h2>&lt;object&gt;</h2>
-        <object data="exampleObject.svg" type="image/svg+xml" width="120" height="120">
-            <img src="image.png" alt="Картинка недоступна">
-            <p>Браузер не поддерживает SVG.</p>
-        </object>
+        <h2>object</h2>
+        <object data="exampleObject.svg" type="image/svg+xml" width="120" height="120"></object>
     </div>
+
     <div class="svg-container">
-        <h2>&lt;svg&gt;</h2>
+        <h2>svg</h2>
         <svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="60" r="50"  fill="yellow" />
+            <circle cx="60" cy="60" r="50" fill="green" />
         </svg>
     </div>
+
     <script>
-        function supportsSVG() {
-            return typeof document.createElementNS === 'function';
-        }
-        if (!supportsSVG()) {
-            alert("SVG не поддерживается");
-        }
+        (function () {
+            "use strict";
+            
+            if (Modernizr.svg) {
+                console.log('Браузер поддерживает SVG.');
+            } else {
+                console.log('Браузер НЕ поддерживает SVG.');
+            }
+        })();
     </script>
-    
 </body>
 </html>

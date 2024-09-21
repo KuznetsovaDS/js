@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="form.js" defer></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="canvas.html">Canvas API</a></li>
+      <li><a href="geolocation.html">Geolocation API</a></li>
+      <li><a href="contacts.html">Телефонная книга</a></li>
+      <li><a href="form.html">Форма</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Форма</h2>
+    <form id="myForm">
+        <label for="name">Имя: </label>
+        <input type="text" id="name" required onchange="validateField(this, 'name-icon')" oninput="validateField(this, 'name-icon')">
+        <img id="name-icon" class="status-icon" src="no.jpeg" alt="status">
+        <br><br>
+
+        <label for="age">Возраст: </label>
+        <input type="number" id="age">
+        <img class="status-icon" src="yes.jpeg" alt="status">
+        <br><br>
+
+        <label for="email">E-mail: </label>
+        <input type="email" id="email" required onchange="validateField(this, 'email-icon')" oninput="validateField(this, 'email-icon')">
+        <img id="email-icon" class="status-icon" src="no.jpeg" alt="status">
+        <br><br>
+
+        <label for="website">Сайт: </label>
+        <input type="url" id="website">
+        <img class="status-icon" src="yes.jpeg" alt="status">
+        <br><br>
+
+        <button type="submit" onclick="validateForm()">Отправить</button>
+    </form>
+  </main>
+</body>
+</html>

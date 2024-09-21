@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Телефонная книга</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="contacts.js" defer></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="canvas.html">Canvas API</a></li>
+      <li><a href="geolocation.html">Geolocation API</a></li>
+      <li><a href="contacts.html">Телефонная книга</a></li>
+      <li><a href="form.html">Форма</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Телефонная книга</h1>
+    <label for="name">Имя:</label>
+    <input type="text" id="name" autofocus autocomplete="off">
+    <label for="phone">Телефон:</label>
+    <input type="text" id="phone" autocomplete="off">
+    <button onclick="save()">Сохранить</button>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Имя</th>
+          <th>Телефон</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="output">
+        <tr>
+          <td colspan="4">Записей нет</td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="clearStorage()">Очистить всё</button>
+  </main>
+</body>
+</html>

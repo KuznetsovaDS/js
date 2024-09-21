@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocation API</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="geolocation.js" defer></script>
+</head>
+<body onload="loadDemo()">
+  <nav>
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="canvas.html">Canvas API</a></li>
+      <li><a href="geolocation.html">Geolocation API</a></li>
+      <li><a href="contacts.html">Телефонная книга</a></li>
+      <li><a href="form.html">Форма</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Пример использования HTML5 Geolocation</h1>
+    <p id="status">Проверяем поддержку HTML5 Geolocation...</p>
+    <h2>Текущее местоположение:</h2>
+    <table border="1">
+      <tr>
+        <th>Широта</th>
+        <td id="latitude">?</td>
+      </tr>
+      <tr>
+        <th>Долгота</th>
+        <td id="longitude">?</td>
+      </tr>
+      <tr>
+        <th>Время</th>
+        <td id="timestamp">?</td>
+      </tr>
+    </table>
+  </main>
+</body>
+</html>

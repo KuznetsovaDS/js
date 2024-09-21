@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+         function loadDemo() {
+            "use strict";
+            if (navigator.geolocation) {
+                document.getElementById("status").innerText = "HTML5 Geolocation поддерживается в вашем браузере.";
+                navigator.geolocation.getCurrentPosition(displayLocation, showError);
+            } else {
+                document.getElementById("status").innerText = "Ваш браузер не поддерживает HTML5 Geolocation.";
+            }
+        }
+        function displayLocation(position) {
+            document.getElementById("latitude").innerText = position.coords.latitude.toFixed(4);
+            document.getElementById("longitude").innerText = position.coords.longitude.toFixed(4);
+            document.getElementById("timestamp").innerText = new Date(position.timestamp).toLocaleString();
+        }
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("Пользователь отказал в предоставлении геолокации");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Информация о местоположении недоступна");
+                    break;
+                case error.TIMEOUT:
+                    alert("Время ожидания запроса истекло");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("Произошла неизвестная ошибка");
+                    break;
+            }
+        }
+
+    </script>
+</head>
+<body onload="loadDemo()">
+    <h1>Пример использования HTML5 Geolocation</h1>
+
+    <span class="info">
+        <p id="status">Проверяем поддержку HTML5 Geolocation...</p>
+    </span>
+
+    <h2>Текущее местоположение:</h2>
+    <table border="1">
+        <tr>
+            <th scope="col"><h5 align="left">Широта</h5></th>
+            <td id="latitude">?</td>
+        </tr>
+        <tr>
+            <th><h5>Долгота</h5></th>
+            <td id="longitude">?</td>
+        </tr>
+        <tr>
+            <th><h5>Время</h5></th>
+            <td id="timestamp">?</td>
+        </tr>
+    </table>
+<body>
+    
+</body>
+</html>

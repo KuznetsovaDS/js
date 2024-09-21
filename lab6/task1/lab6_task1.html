@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <h1>Drag and Drop</h1>
+    <div class="container" id="container1">
+        <div class="draggable" draggable="true" id="item1">Text 1</div>
+        <div class="draggable" draggable="true" id="item2">Text 2</div>
+        <div class="draggable" draggable="true" id="item3">Text 3</div>
+    </div>
+    <div class="container" id="container2">
+        
+    </div>
+
+    <script>
+        (function () {
+            "use strict";
+            window.addEventListener("load", initDragAndDrop, false);
+
+            function initDragAndDrop() {
+                var draggables = document.querySelectorAll('.draggable');
+                var containers = document.querySelectorAll('.container');
+
+                draggables.forEach(function (item) {
+                    item.addEventListener('dragstart', handleDragStart, false);
+                });
+
+                containers.forEach(function (container) {
+                    container.addEventListener('dragover', handleDragOver, false);
+                    container.addEventListener('drop', handleDrop, false);
+                });
+            }
+
+            function handleDragStart(e) {
+                e.dataTransfer.setData('text/plain', e.target.id);
+            }
+
+            function handleDragOver(e) {
+                e.preventDefault(); 
+            }
+
+            function handleDrop(e) {
+                e.preventDefault();
+                var data = e.dataTransfer.getData('text/plain');
+                var draggableElement = document.getElementById(data);
+                this.appendChild(draggableElement);
+            }
+        })();
+    </script>
+</body>
+
+</html>
